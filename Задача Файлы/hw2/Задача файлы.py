@@ -1,4 +1,4 @@
-#  from pprint import pprint
+#  Формирование вывода
 
 file_name = 'recept.txt'
 
@@ -13,11 +13,11 @@ def file_worker():
                 cook_book[dish_name] = []
                 num = int(file.readline().strip())
                 while num > 0:
-                    ingrInfo = file.readline().strip().split('|')
-                    if len(ingrInfo) > 0:
-                        cook_book[dish_name].append({'ingredient': ingrInfo[0],
-                                                     'quantity': ingrInfo[1],
-                                                     'units': ingrInfo[2]})
+                    ingr_info = file.readline().strip().split('|')
+                    if len(ingr_info) > 0:
+                        cook_book[dish_name].append({'ingredient': ingr_info[0],
+                                                     'quantity': ingr_info[1],
+                                                     'units': ingr_info[2]})
                         num -= 1
     return cook_book
 
@@ -25,7 +25,6 @@ def file_worker():
 print(file_worker())
 
 #  Функция рассчета кол-ва ингредиентов
-
 
 cook_book = file_worker()
 
